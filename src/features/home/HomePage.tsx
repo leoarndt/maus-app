@@ -3,6 +3,9 @@ import { useAuth } from '../auth/AuthGate';
 
 import { getHamstiSkin } from '../../lib/supabase';
 import { LoginStreakAchievementChecker } from '../achievements/LoginStreakAchievementChecker';
+import hamsti1Image from '../../assets/hamsti/hamsti_1.png';
+import hamsti2Image from '../../assets/hamsti/hamsti_2.png';
+import hamsti3Image from '../../assets/hamsti/hamsti_3.png';
 
 interface AreaCardProps {
   title: string;
@@ -53,9 +56,9 @@ const AreaCard: React.FC<AreaCardProps> = ({ title, description, icon, color, on
       {title === 'Hamsti-Klicker' ? (
         <img
           src={
-            currentHamstiSkin === 'hamsti_2' ? '/src/assets/hamsti/hamsti_2.png' :
-            currentHamstiSkin === 'hamsti_3' ? '/src/assets/hamsti/hamsti_3.png' :
-            '/src/assets/hamsti/hamsti_1.png'
+            currentHamstiSkin === 'hamsti_2' ? hamsti2Image :
+            currentHamstiSkin === 'hamsti_3' ? hamsti3Image :
+            hamsti1Image
           }
           alt="Hamsti"
           style={{

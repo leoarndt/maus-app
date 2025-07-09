@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { getHamstiClicks, setHamstiClicks, getHamstiSkin, setHamstiSkin, getUnlockedShopItems } from '../../lib/supabase';
 import { useAuth } from '../auth/AuthGate';
 import { useAchievements, checkAndUnlockAchievements } from '../achievements/AchievementManager';
+import hamsti1Image from '../../assets/hamsti/hamsti_1.png';
+import hamsti2Image from '../../assets/hamsti/hamsti_2.png';
+import hamsti3Image from '../../assets/hamsti/hamsti_3.png';
 
 const HAMSTI_KEY = 'hamsti_clicks';
 
-// Hamsti image URLs
-const hamsti1Url = '/src/assets/hamsti/hamsti_1.png';
-const hamsti2Url = '/src/assets/hamsti/hamsti_2.png';
-const hamsti3Url = '/src/assets/hamsti/hamsti_3.png';
+// Hamsti image URLs - using imported images
+const hamsti1Url = hamsti1Image;
+const hamsti2Url = hamsti2Image;
+const hamsti3Url = hamsti3Image;
 
 // Available skins mapping
 const HAMSTI_SKINS = {
