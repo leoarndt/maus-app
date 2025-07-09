@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AuthGate } from './features/auth/AuthGate';
 import { HomePage } from './features/home/HomePage';
 import { Countdown } from './features/countdown/Countdown';
