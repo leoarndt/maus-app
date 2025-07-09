@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useAchievements } from '../achievements/AchievementManager';
-import { getUserPurchases, addPurchase, getShopItems, getUnlockedShopItems, unlockShopItem, supabase } from '../../lib/supabase';
+import { getShopItems, getUnlockedShopItems, unlockShopItem, supabase } from '../../lib/supabase';
 import { useAuth } from '../auth/AuthGate';
 
 interface ShopItem {

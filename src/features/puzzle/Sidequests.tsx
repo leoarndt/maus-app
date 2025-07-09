@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getDailySidequest, supabase, addOrUpdateUserQuest, setUserPoints } from '../../lib/supabase';
+import { supabase, setUserPoints } from '../../lib/supabase';
 import { useAuth } from '../auth/AuthGate';
 import { AchievementPopup } from '../achievements/AchievementPopup';
 import { checkAndUnlockAchievements } from '../achievements/AchievementManager';
@@ -31,10 +31,8 @@ export const Sidequests: React.FC = () => {
       .order('id', { ascending: false })
       .limit(1);
     let questId = null;
-    let questStatus = null;
     if (todayQuests && todayQuests.length > 0) {
       questId = todayQuests[0].quest_id;
-      questStatus = todayQuests[0].status;
     }
     let allQuests: any[] = await fetchAllQuests();
     if (!allQuests || allQuests.length === 0) return null;
@@ -177,7 +175,7 @@ export const Sidequests: React.FC = () => {
           const newPoints = (userDb.points || 0) + rewardPoints;
           await setUserPoints(userData.user_id, newPoints, async () => {
             // Nach dem Setzen: Punkte aus der DB zählen
-            const { data: pointsDb, error: pointsError } = await supabase
+            const { data: pointsDb } = await supabase
               .from('users')
               .select('points')
               .eq('user_id', userData.user_id)

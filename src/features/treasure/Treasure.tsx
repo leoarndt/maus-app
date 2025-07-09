@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAchievements } from '../achievements/AchievementManager';
 import { getUserPurchases, addPurchase, supabase } from '../../lib/supabase';
 import { useAuth } from '../auth/AuthGate';
-import { AchievementsPage } from '../achievements/AchievementsPage';
+
 
 interface Treasure {
   id: string;

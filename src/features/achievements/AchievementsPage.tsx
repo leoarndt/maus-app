@@ -24,9 +24,9 @@ export const AchievementsPage: React.FC = () => {
       return matchesRarity && matchesStatus;
     });
     // Sort by rarity: common > rare > epic > legendary
-    const rarityOrder = { common: 1, rare: 2, epic: 3, legendary: 4 };
+    const rarityOrder: Record<string, number> = { common: 1, rare: 2, epic: 3, legendary: 4 };
     return filtered.sort((a, b) => {
-      const rarityDiff = rarityOrder[a.rarity] - rarityOrder[b.rarity];
+      const rarityDiff = (rarityOrder[a.rarity] || 0) - (rarityOrder[b.rarity] || 0);
       if (rarityDiff !== 0) return rarityDiff;
       if (a.unlocked !== b.unlocked) return b.unlocked ? 1 : -1;
       return a.name.localeCompare(b.name);

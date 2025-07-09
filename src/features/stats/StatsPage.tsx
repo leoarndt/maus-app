@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { getCountdowns, getUnlockedShopItems, getHamstiClicks } from '../../lib/supabase';
 
 export const StatsPage: React.FC = () => {
-  const { achievements, getUnlockedCount, getUserPoints } = useAchievements();
+  const { achievements, getUserPoints } = useAchievements();
   const unlocked = achievements.filter(a => a.unlocked);
   const totalPoints = getUserPoints();
 
@@ -23,7 +23,6 @@ export const StatsPage: React.FC = () => {
 
   useEffect(() => {
     if (!userData?.user_id) return;
-    const today = new Date().toISOString().split('T')[0];
     
     // Mood-Streak direkt aus der Datenbank laden
     supabase
