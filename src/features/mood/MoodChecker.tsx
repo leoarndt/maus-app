@@ -88,7 +88,7 @@ export const MoodChecker: React.FC = () => {
         
         // Mood-Achievements prüfen
         // Gesamtzahl Mood-Entries laden
-        const { data, error, count } = await (await import('../../lib/supabase')).supabase
+        const { count } = await (await import('../../lib/supabase')).supabase
           .from('user_mood_entries')
           .select('id', { count: 'exact', head: true })
           .eq('user_id', userData.user_id);

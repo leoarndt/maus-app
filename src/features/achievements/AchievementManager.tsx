@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { AchievementPopup } from './AchievementPopup';
 import { setUserPoints, saveAchievement, supabase } from '../../lib/supabase';
 import { useAuth } from '../auth/AuthGate';
@@ -56,7 +56,7 @@ export const AchievementProvider: React.FC<{ children: React.ReactNode }> = ({ c
       let userAchievements: any[] = [];
       if (userData?.user_id) {
         console.log('🔑 Fetching user achievements for user:', userData.user_id);
-        const { data: userAchievementsData, error: userError } = await supabase
+        const { data: userAchievementsData } = await supabase
           .from('user_achievements')
           .select('achievement_id, achieved_at')
           .eq('user_id', userData.user_id);

@@ -4,7 +4,6 @@ import { HomePage } from './features/home/HomePage';
 import { Countdown } from './features/countdown/Countdown';
 import { DailyMessage } from './features/dailyMessage/DailyMessage';
 import { Sidequests } from './features/puzzle/Sidequests';
-import { Treasure } from './features/treasure/Treasure';
 import { ShopPage } from './features/treasure/ShopPage';
 import { MoodChecker } from './features/mood/MoodChecker';
 import { AchievementProvider } from './features/achievements/AchievementManager';

@@ -34,10 +34,10 @@ export const AchievementsPage: React.FC = () => {
   }, [achievements, selectedRarity, selectedStatus]);
 
   const rarityStats = useMemo(() => {
-    const stats = { common: 0, rare: 0, epic: 0, legendary: 0 };
+    const stats: Record<string, number> = { common: 0, rare: 0, epic: 0, legendary: 0 };
     achievements.forEach(achievement => {
       if (achievement.unlocked) {
-        stats[achievement.rarity]++;
+        stats[achievement.rarity] = (stats[achievement.rarity] || 0) + 1;
       }
     });
     return stats;

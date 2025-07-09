@@ -3,7 +3,7 @@ import { useAchievements } from '../achievements/AchievementManager';
 import { useAuth } from '../auth/AuthGate';
 import { saveMessageRead } from '../../lib/supabase';
 import { supabase } from '../../lib/supabase';
-import { getDailyMessage } from '../../lib/supabase';
+
 import { checkAndUnlockAchievements } from '../achievements/AchievementManager';
 
 export const DailyMessage: React.FC = () => {

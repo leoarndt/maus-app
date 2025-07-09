@@ -14,12 +14,10 @@ interface AchievementPopupProps {
 
 export const AchievementPopup: React.FC<AchievementPopupProps> = ({ achievement, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     // Start entrance animation
     setIsVisible(true);
-    setIsAnimating(true);
 
     // Auto-close after 4 seconds
     const timer = setTimeout(() => {

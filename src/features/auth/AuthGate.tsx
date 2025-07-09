@@ -53,10 +53,7 @@ export const AuthGate: React.FC<{ children: React.ReactNode }> = ({ children }) 
   const [userData, setUserData] = useState<UserData | null>(null);
   const [loading, setLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [pointsInput, setPointsInput] = useState('');
-  const [selectedAchievement, setSelectedAchievement] = useState('');
-  const [selectedProgressType, setSelectedProgressType] = useState('');
-  const [progressValue, setProgressValue] = useState('');
+
 
   const randomMessage = SWEET_MESSAGES[Math.floor(Math.random() * SWEET_MESSAGES.length)];
   const user_id = 'maus-user';

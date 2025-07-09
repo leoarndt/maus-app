@@ -5,15 +5,6 @@ import { AchievementPopup } from '../achievements/AchievementPopup';
 import { checkAndUnlockAchievements } from '../achievements/AchievementManager';
 import { useAchievements } from '../achievements/AchievementManager';
 
-interface Puzzle {
-  id: number;
-  question: string;
-  options: string[];
-  correctAnswer: number;
-  explanation: string;
-  category: string;
-}
-
 export const Sidequests: React.FC = () => {
   const [sidequest, setSidequest] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
